@@ -1,8 +1,9 @@
 ---
 - name: Check Ansible Version
-  fail:
-    msg: "Ansible version detected is {{ ansible_version.full }}, please use version 2.5.8"
-  when: ansible_version.full != "2.5.8"
+  assert:
+    that: "ansible_version.full is version_compare('2.6', '>=')"
+    msg: >
+      "You must update Ansible to at least 2.6 to use this version of blue_green-lc-deploy."
 
 - name: Assume ProductDomainAdmin Role
   sts_assume_role:
