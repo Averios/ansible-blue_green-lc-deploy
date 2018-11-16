@@ -6,7 +6,7 @@ galaxy_info:
   description: Do blue-green launch-configuration deployment (a.k.a. rolling updates)
   company: Traveloka
   license: MIT
-  min_ansible_version: 2.5.8
+  min_ansible_version: 2.6
   platforms:
   - name: Ubuntu
     versions:
